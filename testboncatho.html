@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Test : Suis-je un bon catholique ?</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#1d4ed8">
+
+  <!-- iOS PWA compatibility -->
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <img
+    src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/%28Albi%29_Pipe_organ_of_Cath%C3%A9drale_Sainte-C%C3%A9cile.jpg/640px-%28Albi%29_Pipe_organ_of_Cath%C3%A9drale_Sainte-C%C3%A9cile.jpg"
+    alt="Grand orgue de la cathédrale Sainte-Cécile d'Albi"
+    class="hero-img"
+  >
+
+  <h1>Test : « Suis-je un bon catholique ? »</h1>
+  <div class="subtitle">
+    <em>« Examinez-vous vous-mêmes pour voir si vous êtes dans la foi. »  2 Co 13, 5</em>
+  </div>
+
+  <div class="intro">
+    <p>
+      Ce test est un outil <strong>ludique et introspectif</strong>. Il ne remplace ni un prêtre, ni votre
+      conscience, ni le regard de Dieu. Répondez simplement par <strong>oui</strong> ou <strong>non</strong>.
+    </p>
+    <p>
+      Le score est un <strong>pourcentage de cohérence</strong> avec l'enseignement catholique :
+      100&nbsp;% signifie que, d'après ce questionnaire, vos réponses vont presque toujours dans le sens de la foi
+      et de la morale de l'Église ; 50&nbsp;% indique un mélange moitié-moitié, etc. Un score négatif est possible.
+    </p>
+    <p style="margin-top:6px;font-size:0.85rem;">
+      <a href="index.html">← Revenir à l'accueil des tests</a>
+    </p>
+  </div>
+
+  <div id="question-box">
+    <div id="progress"></div>
+    <div id="question-text">Chargement…</div>
+    <button id="btn-yes">Oui</button>
+    <button id="btn-no">Non</button>
+  </div>
+
+  <div id="resultat">
+    <div id="score"></div>
+    <div id="interpretation"></div>
+    <div class="footer-note">
+      Rappel : seul Dieu voit vraiment le cœur. Ce test est un support de réflexion, pas un sacrement 😉
+    </div>
+    <p style="margin-top:10px;font-size:0.9rem;">
+      <a href="testapotre.html">Enchaîner avec le test « Quel apôtre êtes-vous ? »</a>
+    </p>
+  </div>
+
+  <script src="boncatho.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/sw.js')
+        .then(() => console.log("Service Worker enregistré"))
+        .catch((e) => console.error("Erreur SW", e));
+    }
+  </script>
+</body>
+</html>

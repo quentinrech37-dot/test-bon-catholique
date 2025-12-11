@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Test : Quel apôtre êtes-vous ?</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#1d4ed8">
+
+  <!-- iOS PWA compatibility -->
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <h1>Test : « Quel apôtre êtes-vous ? »</h1>
+  <div class="subtitle">
+    Un petit test de personnalité inspiré de quelques grands profils apostoliques.
+  </div>
+
+  <div class="intro">
+    <p>
+      Ce questionnaire ne prétend évidemment pas résumer la richesse des apôtres,
+      mais proposer <strong>des profils symboliques</strong>&nbsp;: Pierre le fougueux,
+      Jean le contemplatif, Thomas le rationnel, André le discret, Jacques le zélé,
+      Matthieu le converti organisé…
+    </p>
+    <p>
+      À chaque question, choisissez la réponse qui vous ressemble le plus.
+    </p>
+    <p style="margin-top:6px;font-size:0.85rem;">
+      <a href="index.html">← Revenir à l'accueil des tests</a><br>
+      <a href="testboncatho.html">← Revenir au test « Suis-je un bon catholique ? »</a>
+    </p>
+  </div>
+
+  <div class="question-box" id="question-box-apotre">
+    <div class="progress" id="progress-apotre"></div>
+    <div class="question-text" id="question-text-apotre">Chargement…</div>
+    <div id="answers-apotre"></div>
+  </div>
+
+  <div class="result-box" id="resultat-apotre">
+    <div id="profil-apotre"></div>
+    <div id="details-apotre"></div>
+    <div class="footer-note" style="margin-top:10px;">
+      Rappel : les apôtres sont des saints réels, pas des archétypes psychologiques.
+      Ce test est une caricature bienveillante pour réfléchir à votre manière de suivre le Christ.
+    </div>
+  </div>
+
+  <script src="apotre.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/sw.js')
+        .then(() => console.log("Service Worker enregistré"))
+        .catch((e) => console.error("Erreur SW", e));
+    }
+  </script>
+</body>
+</html>
