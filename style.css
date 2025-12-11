@@ -28,6 +28,36 @@ body {
     var(--bg-main);
   color: #f9fafb;
 }
+/* --- Arrière-plan global : photo + voile bleu marine --- */
+body {
+    background: none; /* On retire le fond uni actuel */
+    position: relative;
+    min-height: 100vh;
+}
+
+/* Image de fond (full screen, fixe) */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/%28Albi%29_Pipe_organ_of_Cath%C3%A9drale_Sainte-C%C3%A9cile.jpg/1920px-%28Albi%29_Pipe_organ_of_Cath%C3%A9drale_Sainte-C%C3%A9cile.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    filter: brightness(0.35) saturate(0.7); /* Ternit l’image */
+    z-index: -2;
+}
+
+/* Voile bleu marine semi-transparent */
+body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(10, 20, 40, 0.7); /* bleu profond translucide */
+    backdrop-filter: blur(3px);
+    z-index: -1;
+}
+
 
 /* Conteneur central commun */
 
@@ -36,6 +66,21 @@ body {
   margin: 0 auto;
   padding: 24px 16px 40px 16px;
 }
+.page {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.88);
+    backdrop-filter: blur(4px);
+    border-radius: 14px;
+    padding: 20px 24px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+}
+
 
 /* ---------- Bandeau "France" ---------- */
 
@@ -306,4 +351,25 @@ button:active {
   text-align: center;
   font-size: 0.8rem;
   color: #9ca3af;
+}
+
+/* Boutons de navigation */
+.btn-nav {
+    display: inline-block;
+    padding: 10px 18px;
+    margin: 6px 0;
+    background: rgba(255,255,255,0.2);
+    border: 1px solid rgba(255,255,255,0.4);
+    border-radius: 8px;
+    text-decoration: none;
+    color: #e2e8f0;
+    font-weight: 600;
+    transition: all 0.25s ease;
+}
+
+.btn-nav:hover {
+    background: rgba(255,255,255,0.35);
+    color: #fff;
+    border-color: rgba(255,255,255,0.7);
+    transform: translateY(-2px);
 }
