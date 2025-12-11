@@ -1,6 +1,7 @@
 // apotre.js
 
-// Profils d'apôtres (archétypes simplifiés)
+// ---------- Profils d'apôtres (archétypes simplifiés) ----------
+
 const apostlesProfiles = {
   pierre: {
     name: "Saint Pierre",
@@ -62,7 +63,8 @@ const apostlesProfiles = {
   }
 };
 
-// Questions : chaque réponse ajoute des points à un ou plusieurs profils
+// ---------- Questions : chaque réponse pondère plusieurs profils ----------
+
 const questionsApotres = [
   {
     text: "Quand il faut prendre une décision risquée (foi, projet, engagement paroissial), vous avez plutôt tendance à…",
@@ -189,10 +191,539 @@ const questionsApotres = [
         weights: { andre: 2, matthieu: 1 }
       }
     ]
+  },
+  {
+    text: "Quand un conflit éclate dans un groupe, vous avez tendance à…",
+    answers: [
+      {
+        label: "Intervenir frontalement pour remettre les choses au clair.",
+        weights: { pierre: 2, jacques: 1 }
+      },
+      {
+        label: "Rester proche des personnes blessées et les écouter.",
+        weights: { jean: 2, andre: 1 }
+      },
+      {
+        label: "Essayer de comprendre les causes profondes et de trouver une solution rationnelle.",
+        weights: { thomas: 2 }
+      },
+      {
+        label: "Chercher un compromis réaliste que tout le monde peut accepter.",
+        weights: { matthieu: 2, andre: 1 }
+      }
+    ]
+  },
+  {
+    text: "Si vous aviez une journée libre idéale pour nourrir votre foi, vous la passeriez plutôt…",
+    answers: [
+      {
+        label: "En pèlerinage ou en grande marche avec d’autres, avec un beau temps de messe au milieu.",
+        weights: { jacques: 2, pierre: 1 }
+      },
+      {
+        label: "En retraite silencieuse dans un monastère, avec beaucoup de temps d’oraison.",
+        weights: { jean: 2 }
+      },
+      {
+        label: "À lire, étudier, prendre des notes pour mieux comprendre la foi.",
+        weights: { thomas: 2 }
+      },
+      {
+        label: "À servir une œuvre concrète (resto du cœur, maraude, chantier paroissial).",
+        weights: { andre: 2, matthieu: 1 }
+      }
+    ]
+  },
+  {
+    text: "Devant un projet missionnaire un peu fou proposé par votre paroisse, vous réagissez…",
+    answers: [
+      {
+        label: "« Allons-y, le Seigneur pourvoira ! »",
+        weights: { pierre: 2 }
+      },
+      {
+        label: "« Comment s’assurer qu’on reste fidèle à l’Évangile dans ce projet ? »",
+        weights: { jacques: 2, thomas: 1 }
+      },
+      {
+        label: "« Qui sont les personnes concrètes qu’on va rejoindre et aimer ? »",
+        weights: { andre: 2, jean: 1 }
+      },
+      {
+        label: "« Ok, mais il faut un budget, un planning, des rôles clairs. »",
+        weights: { matthieu: 2 }
+      }
+    ]
+  },
+  {
+    text: "On dit de vous que vous êtes plutôt…",
+    answers: [
+      {
+        label: "Cash, parfois un peu brut de décoffrage.",
+        weights: { pierre: 2, jacques: 1 }
+      },
+      {
+        label: "Doux, attentif, sensible aux personnes.",
+        weights: { jean: 2, andre: 1 }
+      },
+      {
+        label: "Cérébral, aimant les débats et les nuances.",
+        weights: { thomas: 2 }
+      },
+      {
+        label: "Organisé, fiable, sur qui on peut compter pour la logistique.",
+        weights: { matthieu: 2, andre: 1 }
+      }
+    ]
+  },
+  {
+    text: "Dans votre vie, la notion de « conversion » évoque surtout…",
+    answers: [
+      {
+        label: "Un retournement parfois brutal, une décision forte pour le Christ.",
+        weights: { pierre: 2, matthieu: 1 }
+      },
+      {
+        label: "Une histoire d’amour qui approfondit peu à peu le lien avec Jésus.",
+        weights: { jean: 2 }
+      },
+      {
+        label: "Un cheminement long, avec des questions, des essais, des remises en cause.",
+        weights: { thomas: 2 }
+      },
+      {
+        label: "Des choix concrets qui réorientent ma manière de travailler, de consommer, de m’engager.",
+        weights: { matthieu: 2, jacques: 1 }
+      }
+    ]
+  },
+  {
+    text: "Quand vous voyez des injustices dans l’Église ou dans la société, vous êtes plutôt porté à…",
+    answers: [
+      {
+        label: "Réagir fort, dénoncer, prendre la parole.",
+        weights: { jacques: 2, pierre: 1 }
+      },
+      {
+        label: "Prier pour les personnes concernées et porter cela dans le secret.",
+        weights: { jean: 2 }
+      },
+      {
+        label: "Comprendre les mécanismes, les causes, les systèmes qui produisent ces injustices.",
+        weights: { thomas: 2 }
+      },
+      {
+        label: "Chercher une réponse concrète (asso, projet, réseau) pour agir à mon échelle.",
+        weights: { matthieu: 2, andre: 1 }
+      }
+    ]
+  },
+  {
+    text: "Si vous deviez résumer ce que vous voudriez le plus entendre du Christ à la fin de votre vie…",
+    answers: [
+      {
+        label: "« Tu as combattu le bon combat, tu as gardé la foi. »",
+        weights: { jacques: 2, pierre: 1 }
+      },
+      {
+        label: "« C’est bien, bon et fidèle serviteur, tu as beaucoup aimé. »",
+        weights: { jean: 2, andre: 1 }
+      },
+      {
+        label: "« Tu as cherché la vérité et tu t’es laissé surprendre par ma miséricorde. »",
+        weights: { thomas: 2 }
+      },
+      {
+        label: "« Tu as mis tes talents et ton histoire au service de mon Royaume. »",
+        weights: { matthieu: 2 }
+      }
+    ]
+  },
+
+  // ---------- Nouvelles questions (13 à 30) ----------
+
+  {
+    text: "Quand on vous félicite pour un service rendu à l’Église, vous…",
+    answers: [
+      {
+        label: "Répondez spontanément, un peu gêné mais content : « Merci, Deo gratias ! »",
+        weights: { pierre: 2, andre: 1 }
+      },
+      {
+        label: "Minimisez et ramenez plutôt à ce que le Seigneur a fait.",
+        weights: { jean: 2 }
+      },
+      {
+        label: "Analysez intérieurement ce qui a bien fonctionné pour refaire mieux la prochaine fois.",
+        weights: { matthieu: 2, thomas: 1 }
+      },
+      {
+        label: "Vous questionnez surtout sur votre sincérité et vos motivations.",
+        weights: { jacques: 2 }
+      }
+    ]
+  },
+  {
+    text: "Sur les réseaux sociaux, votre manière d’évangéliser serait plutôt…",
+    answers: [
+      {
+        label: "Des posts assez francs, clairs, assumés sur la foi.",
+        weights: { pierre: 2, jacques: 1 }
+      },
+      {
+        label: "Des partages de textes spirituels, de belles images, de citations de saints.",
+        weights: { jean: 2 }
+      },
+      {
+        label: "Des threads d’explication, des liens vers des ressources solides.",
+        weights: { thomas: 2 }
+      },
+      {
+        label: "Des annonces concrètes : missions, maraudes, événements, collectes.",
+        weights: { matthieu: 2, andre: 1 }
+      }
+    ]
+  },
+  {
+    text: "Votre rapport au temps et à l’organisation est plutôt…",
+    answers: [
+      {
+        label: "Je vis beaucoup à l’intuition, au jour le jour.",
+        weights: { pierre: 2 }
+      },
+      {
+        label: "Je structure un minimum pour dégager de vrais temps de prière.",
+        weights: { jean: 2, andre: 1 }
+      },
+      {
+        label: "Je planifie beaucoup, j’aime les agendas, les to-do listes.",
+        weights: { matthieu: 2 }
+      },
+      {
+        label: "Je gère surtout en fonction des priorités intellectuelles ou des échéances.",
+        weights: { thomas: 2, jacques: 1 }
+      }
+    ]
+  },
+  {
+    text: "Dans la liturgie, le service qui vous attirerait le plus…",
+    answers: [
+      {
+        label: "Lecteur, prédication, prise de parole.",
+        weights: { pierre: 2, jacques: 1 }
+      },
+      {
+        label: "Chorale, chant, animation de la prière.",
+        weights: { jean: 2 }
+      },
+      {
+        label: "Catéchèse, formation, accompagnement intellectuel.",
+        weights: { thomas: 2 }
+      },
+      {
+        label: "Accueil, service de sacristie, logistique discrète.",
+        weights: { andre: 2, matthieu: 1 }
+      }
+    ]
+  },
+  {
+    text: "Quand vous réalisez que vous vous êtes clairement trompé…",
+    answers: [
+      {
+        label: "Vous pouvez vous emporter, mais vous revenez ensuite demander pardon.",
+        weights: { pierre: 2 }
+      },
+      {
+        label: "Vous portez cela dans la prière et cherchez la réconciliation en douceur.",
+        weights: { jean: 2, andre: 1 }
+      },
+      {
+        label: "Vous analysez en détail ce qui vous a conduit à l’erreur.",
+        weights: { thomas: 2 }
+      },
+      {
+        label: "Vous prenez des résolutions concrètes pour ne plus reproduire la même faute.",
+        weights: { jacques: 2, matthieu: 1 }
+      }
+    ]
+  },
+  {
+    text: "Face aux questions d’argent et de biens matériels…",
+    answers: [
+      {
+        label: "Vous pouvez être généreux de manière impulsive.",
+        weights: { pierre: 2 }
+      },
+      {
+        label: "Vous voyez surtout l’occasion d’aider les plus pauvres.",
+        weights: { andre: 2, jean: 1 }
+      },
+      {
+        label: "Vous réfléchissez à l’usage juste, à la doctrine sociale de l’Église.",
+        weights: { thomas: 2, jacques: 1 }
+      },
+      {
+        label: "Vous aimez que les ressources soient bien gérées pour servir la mission.",
+        weights: { matthieu: 2 }
+      }
+    ]
+  },
+  {
+    text: "Après une homélie qui vous a profondément déplu, vous…",
+    answers: [
+      {
+        label: "Râlez franchement, éventuellement à voix haute en sortant.",
+        weights: { pierre: 2 }
+      },
+      {
+        label: "Portez cela dans la prière et essayez de garder la paix.",
+        weights: { jean: 2 }
+      },
+      {
+        label: "Reprenez le texte du Magistère ou de la Bible pour vérifier ce qui vous a gêné.",
+        weights: { thomas: 2, jacques: 1 }
+      },
+      {
+        label: "Cherchez éventuellement à en parler calmement avec le prêtre, dans un cadre posé.",
+        weights: { andre: 2, matthieu: 1 }
+      }
+    ]
+  },
+  {
+    text: "Pour vous ressourcer spirituellement, vous avez besoin avant tout…",
+    answers: [
+      {
+        label: "D’une communauté vivante, de fraternité, d’amitiés fortes.",
+        weights: { pierre: 2, andre: 1 }
+      },
+      {
+        label: "De silence, de nature, d’un coin de chapelle.",
+        weights: { jean: 2 }
+      },
+      {
+        label: "D’un bon livre, d’enseignements nourrissants.",
+        weights: { thomas: 2 }
+      },
+      {
+        label: "D’un équilibre entre prière et action concrète.",
+        weights: { matthieu: 2, jacques: 1 }
+      }
+    ]
+  },
+  {
+    text: "Quand vous apprenez une nouvelle compétence pour la mission (musique, catéchèse, outils web…), vous…",
+    answers: [
+      {
+        label: "Vous lancez et apprenez en faisant, quitte à improviser.",
+        weights: { pierre: 2 }
+      },
+      {
+        label: "Cherchez un mentor, quelqu’un qui vous accompagne.",
+        weights: { andre: 2, jean: 1 }
+      },
+      {
+        label: "Suivez des tutos, des cours, lisez la doc pour bien comprendre.",
+        weights: { thomas: 2 }
+      },
+      {
+        label: "Structurez le projet, planifiez les étapes d’apprentissage.",
+        weights: { matthieu: 2, jacques: 1 }
+      }
+    ]
+  },
+  {
+    text: "Votre rapport au sacrement de réconciliation est plutôt…",
+    answers: [
+      {
+        label: "J’y vais quand quelque chose me travaille fort.",
+        weights: { pierre: 2 }
+      },
+      {
+        label: "C’est un lieu privilégié de miséricorde que je fréquente volontiers.",
+        weights: { jean: 2 }
+      },
+      {
+        label: "J’aime comprendre la dimension théologique et morale de ce sacrement.",
+        weights: { thomas: 2, jacques: 1 }
+      },
+      {
+        label: "Je vois aussi comment l’intégrer dans un rythme de vie structuré.",
+        weights: { matthieu: 2, andre: 1 }
+      }
+    ]
+  },
+  {
+    text: "Dans une assemblée diocésaine ou un synode local, vous seriez plutôt…",
+    answers: [
+      {
+        label: "Une voix forte qui exprime clairement ce que beaucoup pensent tout bas.",
+        weights: { pierre: 2, jacques: 1 }
+      },
+      {
+        label: "Celui/celle qui écoute, relit et cherche les mouvements de l’Esprit.",
+        weights: { jean: 2 }
+      },
+      {
+        label: "Celui/celle qui précise les concepts, les formulations, les nuances.",
+        weights: { thomas: 2 }
+      },
+      {
+        label: "Celui/celle qui veille au concret : calendrier, moyens, réalisme des décisions.",
+        weights: { matthieu: 2, andre: 1 }
+      }
+    ]
+  },
+  {
+    text: "Lors d’un grand pèlerinage, on vous trouverait le plus volontiers…",
+    answers: [
+      {
+        label: "En tête du groupe, à donner le rythme et encourager.",
+        weights: { pierre: 2, jacques: 1 }
+      },
+      {
+        label: "Auprès des personnes fatiguées, à rester avec le dernier.",
+        weights: { andre: 2, jean: 1 }
+      },
+      {
+        label: "À discuter en profondeur avec ceux qui se posent des questions de foi.",
+        weights: { thomas: 2 }
+      },
+      {
+        label: "À gérer les inscriptions, les hébergements, les repas.",
+        weights: { matthieu: 2 }
+      }
+    ]
+  },
+  {
+    text: "Face à un ami très proche qui traverse une grosse crise morale ou spirituelle, vous…",
+    answers: [
+      {
+        label: "Lui parlez franchement, quitte à lui secouer un peu les puces.",
+        weights: { pierre: 2, jacques: 1 }
+      },
+      {
+        label: "Restez présent, disponible, surtout dans l’écoute et la prière.",
+        weights: { jean: 2, andre: 1 }
+      },
+      {
+        label: "Cherchez des réponses, des lectures, des arguments pour l’aider à y voir clair.",
+        weights: { thomas: 2 }
+      },
+      {
+        label: "Proposez un accompagnement concret : groupe, retraite, démarche de foi.",
+        weights: { matthieu: 2 }
+      }
+    ]
+  },
+  {
+    text: "Quand quelqu’un critique l’Église de manière injuste devant vous, vous…",
+    answers: [
+      {
+        label: "Réagissez assez vivement pour défendre la foi.",
+        weights: { pierre: 2, jacques: 1 }
+      },
+      {
+        label: "Essayez de comprendre d’abord son histoire et ses blessures.",
+        weights: { jean: 2, andre: 1 }
+      },
+      {
+        label: "Expliquez patiemment ce que dit réellement l’Église.",
+        weights: { thomas: 2 }
+      },
+      {
+        label: "Invitez à un événement concret pour découvrir l’Église « de l’intérieur ».",
+        weights: { matthieu: 2 }
+      }
+    ]
+  },
+  {
+    text: "Dans un groupe de jeunes, la mission qu’on vous donnerait naturellement serait…",
+    answers: [
+      {
+        label: "Responsable d’équipe, animateur principal.",
+        weights: { pierre: 2 }
+      },
+      {
+        label: "Référent accueil/écoute, attention aux plus fragiles.",
+        weights: { andre: 2, jean: 1 }
+      },
+      {
+        label: "Responsable enseignement/formation.",
+        weights: { thomas: 2, jacques: 1 }
+      },
+      {
+        label: "Responsable logistique, trésorerie, organisation.",
+        weights: { matthieu: 2 }
+      }
+    ]
+  },
+  {
+    text: "Parmi les grandes figures spirituelles (hors Jésus), celle qui vous attire le plus serait plutôt…",
+    answers: [
+      {
+        label: "Un grand prédicateur ou évangélisateur (Dominique, François Xavier…).",
+        weights: { pierre: 2, jacques: 1 }
+      },
+      {
+        label: "Un contemplatif ou mystique (Jean de la Croix, Thérèse d’Avila…).",
+        weights: { jean: 2 }
+      },
+      {
+        label: "Un docteur de l’Église, théologien, intellectuel.",
+        weights: { thomas: 2 }
+      },
+      {
+        label: "Un fondateur/fondatrice très concret(e), organisateur d’œuvres.",
+        weights: { matthieu: 2, andre: 1 }
+      }
+    ]
+  },
+  {
+    text: "Devant un passage difficile de l’Écriture que vous ne comprenez pas…",
+    answers: [
+      {
+        label: "Vous pouvez être un peu choqué, mais vous continuez à faire confiance.",
+        weights: { pierre: 2 }
+      },
+      {
+        label: "Vous le méditez longuement, cherchant ce que Dieu veut vous dire.",
+        weights: { jean: 2 }
+      },
+      {
+        label: "Vous cherchez des commentaires, la Tradition, les exégètes.",
+        weights: { thomas: 2, jacques: 1 }
+      },
+      {
+        label: "Vous regardez comment ce texte se vit concrètement dans la vie de l’Église.",
+        weights: { matthieu: 2, andre: 1 }
+      }
+    ]
+  },
+  {
+    text: "Si vous deviez choisir ce que vous voulez le plus laisser comme trace dans l’Église…",
+    answers: [
+      {
+        label: "Un témoignage de foi courageux, qui aura entraîné d’autres à suivre le Christ.",
+        weights: { pierre: 2, jacques: 1 }
+      },
+      {
+        label: "Une trace d’amour, de miséricorde, de relations profondes et pacifiées.",
+        weights: { jean: 2, andre: 1 }
+      },
+      {
+        label: "Une parole de vérité, une lumière pour l’intelligence de la foi.",
+        weights: { thomas: 2 }
+      },
+      {
+        label: "Une œuvre durable (groupe, projet, institution) mise au service de l’Évangile.",
+        weights: { matthieu: 2 }
+      }
+    ]
   }
 ];
 
-// État du test
+// ---------- État du test ----------
+
 let currentQuestionIndex = 0;
 const scores = {
   pierre: 0,
@@ -211,6 +742,8 @@ const resultApEl = document.getElementById("resultat-apotre");
 const profilApEl = document.getElementById("profil-apotre");
 const detailsApEl = document.getElementById("details-apotre");
 
+// ---------- Affichage des questions ----------
+
 function renderQuestion() {
   if (currentQuestionIndex >= questionsApotres.length) {
     showResultApotre();
@@ -219,7 +752,8 @@ function renderQuestion() {
 
   const q = questionsApotres[currentQuestionIndex];
   questionTextApEl.textContent = q.text;
-  progressApEl.textContent = "Question " + (currentQuestionIndex + 1) + " sur " + questionsApotres.length;
+  progressApEl.textContent =
+    "Question " + (currentQuestionIndex + 1) + " sur " + questionsApotres.length;
 
   // Nettoyer les anciennes réponses
   answersApEl.innerHTML = "";
@@ -227,9 +761,6 @@ function renderQuestion() {
   q.answers.forEach((ans, idx) => {
     const btn = document.createElement("button");
     btn.textContent = ans.label;
-    btn.style.display = "block";
-    btn.style.width = "100%";
-    btn.style.margin = "8px 0";
     btn.addEventListener("click", () => handleAnswer(idx));
     answersApEl.appendChild(btn);
   });
@@ -250,6 +781,8 @@ function handleAnswer(answerIndex) {
   renderQuestion();
 }
 
+// ---------- Résultat ----------
+
 function showResultApotre() {
   boxApEl.style.display = "none";
   resultApEl.style.display = "block";
@@ -263,32 +796,35 @@ function showResultApotre() {
   }
 
   // Récupérer tous les apôtres ayant ce score max (en cas d'ex æquo)
-  const bestKeys = Object.keys(scores).filter(k => scores[k] === maxScore);
+  const bestKeys = Object.keys(scores).filter((k) => scores[k] === maxScore);
 
-  // On prend le premier profil pour le texte principal
   const primaryKey = bestKeys[0];
   const profile = apostlesProfiles[primaryKey];
 
   if (!profile) {
     profilApEl.textContent = "Profil indéterminé";
-    detailsApEl.textContent = "Les réponses ne permettent pas de dégager un profil clair. " +
+    detailsApEl.textContent =
+      "Les réponses ne permettent pas de dégager un profil clair. " +
       "Vous êtes peut-être un mélange harmonieux de plusieurs apôtres !";
     return;
   }
 
-  // Titre
   if (bestKeys.length === 1) {
     profilApEl.textContent = profile.name + " – " + profile.title;
   } else {
-    const names = bestKeys.map(k => apostlesProfiles[k]?.name || k);
+    const names = bestKeys
+      .map((k) => apostlesProfiles[k]?.name || k)
+      .filter(Boolean);
     profilApEl.textContent = names.join(" / ") + " – profils combinés";
   }
 
-  // Détails
   let details = profile.text;
 
   if (bestKeys.length > 1) {
-    const secondary = bestKeys.slice(1).map(k => apostlesProfiles[k]?.name).filter(Boolean);
+    const secondary = bestKeys
+      .slice(1)
+      .map((k) => apostlesProfiles[k]?.name)
+      .filter(Boolean);
     if (secondary.length > 0) {
       details += "\n\nVous présentez aussi des traits de : " + secondary.join(", ") + ".";
     }

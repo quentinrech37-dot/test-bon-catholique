@@ -1,93 +1,173 @@
-/* Mise en page générale */
-body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 20px;
-  background: #f5f5f5;
-  text-align: center;
-  line-height: 1.6;
+/* ---------- Couleurs & ambiance ---------- */
+/* Bleu nuit + doré, léger clin d’œil "France catholique/patrimoine" */
+
+:root {
+  --bg-main: #0f172a;        /* bleu nuit */
+  --bg-soft: #111827;        /* variante */
+  --card: #f9fafb;           /* cartes claires */
+  --accent: #b91c1c;         /* rouge profond */
+  --accent-soft: #f97316;    /* orange / doré */
+  --text-main: #111827;
+  --text-soft: #4b5563;
 }
+
+/* ---------- Base ---------- */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  background:
+    radial-gradient(circle at top left, rgba(248, 250, 252, 0.08), transparent 55%),
+    radial-gradient(circle at bottom right, rgba(248, 250, 252, 0.06), transparent 55%),
+    var(--bg-main);
+  color: #f9fafb;
+}
+
+/* Conteneur central commun */
+
+.page {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 24px 16px 40px 16px;
+}
+
+/* ---------- Bandeau "France" ---------- */
+
+.france-bar {
+  height: 6px;
+  width: 100%;
+  display: flex;
+}
+
+.france-bar span {
+  flex: 1;
+}
+
+.france-bar .bleu {
+  background: #1d4ed8;
+}
+.france-bar .blanc {
+  background: #f9fafb;
+}
+.france-bar .rouge {
+  background: #b91c1c;
+}
+
+/* ---------- Header commun ---------- */
 
 .site-header {
-  margin-bottom: 10px;
+  text-align: center;
+  margin-bottom: 24px;
 }
 
-h1 {
-  margin-top: 10px;
-  margin-bottom: 5px;
+.site-header h1 {
+  margin: 18px 0 6px 0;
+  font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+  font-size: clamp(1.9rem, 4vw, 2.4rem);
+  letter-spacing: 0.03em;
 }
 
 .subtitle {
-  font-size: 0.9rem;
-  color: #555;
-  margin-bottom: 10px;
+  font-size: 0.95rem;
+  color: #e5e7eb;
+  margin-bottom: 6px;
 }
 
-.hero-img,
-img.hero-img {
-  width: 60%;
-  max-width: 600px;
-  border-radius: 10px;
+/* Petite mention sous-titre */
+
+.tagline {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: #9ca3af;
+}
+
+/* ---------- Cartes & blocs ---------- */
+
+.hero-img {
+  width: 100%;
+  max-width: 760px;
+  border-radius: 18px;
   display: block;
-  margin: 10px auto 15px auto;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+  margin: 10px auto 20px auto;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.55);
+  border: 1px solid rgba(249, 250, 251, 0.12);
 }
 
-/* Bloc d'introduction */
 .intro {
-  background: #ffffff;
-  padding: 12px 16px;
-  border-radius: 10px;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.12);
+  background: rgba(17, 24, 39, 0.9);
+  padding: 18px 20px;
+  border-radius: 18px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
   font-size: 0.95rem;
   text-align: left;
-  margin-bottom: 20px;
+  margin-bottom: 22px;
+  border: 1px solid rgba(249, 250, 251, 0.08);
 }
 
-/* Cartes de la page d'accueil */
+.intro strong {
+  color: #fbbf24;
+}
+
+.card {
+  background: var(--card);
+  color: var(--text-main);
+  border-radius: 18px;
+  padding: 18px 18px 20px 18px;
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.45);
+  border: 1px solid rgba(15, 23, 42, 0.18);
+}
+
+.card h2 {
+  margin-top: 0;
+  font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+  font-size: 1.2rem;
+  margin-bottom: 6px;
+}
+
+.card p {
+  font-size: 0.92rem;
+  color: var(--text-soft);
+}
+
+/* ---------- Grille des tests (page d'accueil) ---------- */
+
 .test-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 16px;
+  gap: 18px;
   margin-bottom: 20px;
 }
 
-@media (min-width: 640px) {
+@media (min-width: 720px) {
   .test-grid {
     grid-template-columns: 1fr 1fr;
   }
 }
 
-.test-card {
-  background: #ffffff;
-  border-radius: 12px;
-  padding: 16px;
-  text-align: left;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-}
+/* ---------- Boutons / liens ---------- */
 
-.test-card h2 {
-  margin-top: 0;
-  margin-bottom: 8px;
-  font-size: 1.1rem;
-}
-
-.test-card p {
-  font-size: 0.9rem;
-  margin-bottom: 12px;
-}
-
-/* Boutons / liens */
 button {
   padding: 10px 22px;
   margin: 8px;
   border-radius: 999px;
   border: none;
   cursor: pointer;
-  font-size: 1rem;
+  font-size: 0.98rem;
   font-weight: 600;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.18);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+  transition: transform 0.12s ease, box-shadow 0.12s ease, background 0.12s ease;
+}
+
+button:active {
+  transform: translateY(1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
 }
 
 #btn-yes {
@@ -96,7 +176,7 @@ button {
 }
 
 #btn-no {
-  background: #ef4444;
+  background: #dc2626;
   color: white;
 }
 
@@ -106,32 +186,68 @@ button {
   border-radius: 999px;
   text-decoration: none;
   font-weight: 600;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.18);
-  font-size: 0.95rem;
+  font-size: 0.9rem;
+  border: 1px solid rgba(249, 250, 251, 0.12);
+  color: #f9fafb;
+  background: linear-gradient(135deg, #1d4ed8, #b91c1c);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
+  transition: transform 0.12s ease, box-shadow 0.12s ease, filter 0.12s ease;
 }
 
-.primary-link {
-  background: #1d4ed8;
-  color: #fff;
+.btn-link:hover {
+  filter: brightness(1.05);
+  transform: translateY(-1px);
 }
 
-.secondary-link {
-  background: #0f766e;
-  color: #fff;
+.btn-link.secondary {
+  background: linear-gradient(135deg, #0f766e, #f97316);
 }
 
-/* Boîte de questions / résultats – communs */
+/* Liens de navigation "retour" */
+
+.nav-links {
+  margin-top: 8px;
+  font-size: 0.85rem;
+}
+
+.nav-links a {
+  color: #bfdbfe;
+  text-decoration: none;
+}
+
+.nav-links a:hover {
+  text-decoration: underline;
+}
+
+/* ---------- Boîte de questions / résultats ---------- */
+
 #question-box,
 .question-box {
-  background: #ffffff;
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  margin-top: 20px;
+}
+
+#question-box,
+.question-box,
+#resultat,
+.result-box {
+  /* on réutilise .card */
+  background: var(--card);
+  color: var(--text-main);
+  border-radius: 18px;
+  padding: 20px 18px 22px 18px;
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.45);
+  border: 1px solid rgba(15, 23, 42, 0.18);
+}
+
+#resultat,
+.result-box {
+  display: none;
+  margin-top: 18px;
 }
 
 #question-text,
 .question-text {
-  font-size: 1.15rem;
+  font-size: 1.05rem;
   font-weight: 600;
   margin-bottom: 15px;
   text-align: left;
@@ -139,20 +255,9 @@ button {
 
 #progress,
 .progress {
-  font-size: 0.9rem;
-  color: #666;
+  font-size: 0.85rem;
+  color: #6b7280;
   margin-bottom: 10px;
-  text-align: left;
-}
-
-#resultat,
-.result-box {
-  display: none;
-  margin-top: 25px;
-  padding: 20px;
-  background: #ffffff;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
   text-align: left;
 }
 
@@ -162,7 +267,15 @@ button {
   margin-bottom: 8px;
 }
 
-/* Résultat du test apôtre */
+.footer-note {
+  font-size: 0.8rem;
+  color: #9ca3af;
+  margin-top: 8px;
+  text-align: left;
+}
+
+/* Résultat test apôtre */
+
 #profil-apotre {
   font-size: 1.2rem;
   font-weight: 700;
@@ -171,12 +284,26 @@ button {
 
 #details-apotre {
   white-space: pre-line;
+  font-size: 0.92rem;
 }
 
-/* Footer */
-.footer-note {
-  font-size: 0.85rem;
-  color: #555;
-  margin-top: 8px;
+/* Boutons de réponses pour le test apôtre */
+
+#answers-apotre button {
+  display: block;
+  width: 100%;
+  margin: 8px 0;
+  text-align: left;
+  padding: 10px 16px;
+  background: #e5e7eb;
+  color: #111827;
+}
+
+/* Footer global */
+
+.site-footer {
+  margin-top: 30px;
   text-align: center;
+  font-size: 0.8rem;
+  color: #9ca3af;
 }

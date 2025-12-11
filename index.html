@@ -11,69 +11,77 @@
   <link rel="apple-touch-icon" href="icons/icon-192.png">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
 
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <div class="france-bar">
+    <span class="bleu"></span>
+    <span class="blanc"></span>
+    <span class="rouge"></span>
+  </div>
 
-  <header class="site-header">
-    <h1>Petits tests cathos</h1>
-    <p class="subtitle">
-      Une aide ludique pour se connaître un peu mieux… sans jamais remplacer la grâce ni les sacrements.
-    </p>
-  </header>
+  <div class="page">
+    <header class="site-header">
+      <p class="tagline">Fides · Patria · Patrimoine</p>
+      <h1>Petits tests cathos</h1>
+      <p class="subtitle">
+        Une aide ludique pour se connaître un peu mieux… sans jamais remplacer la grâce ni les sacrements.
+      </p>
+    </header>
 
-  <main>
     <img
       src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/%28Albi%29_Pipe_organ_of_Cath%C3%A9drale_Sainte-C%C3%A9cile.jpg/640px-%28Albi%29_Pipe_organ_of_Cath%C3%A9drale_Sainte-C%C3%A9cile.jpg"
       alt="Grand orgue de la cathédrale Sainte-Cécile d'Albi"
       class="hero-img"
     >
 
-    <section class="intro">
+    <div class="intro card">
       <p>
-        Ces questionnaires sont des <strong>outils ludiques</strong> pour susciter un examen de conscience ou réfléchir
-        à votre personnalité. Ils ne remplacent évidemment ni un prêtre, ni votre conscience, ni le regard de Dieu.
+        Ces questionnaires sont des <strong>outils ludiques</strong> pour susciter un examen de conscience
+        ou réfléchir à votre personnalité. Ils ne remplacent évidemment ni un prêtre,
+        ni votre conscience, ni le regard de Dieu.
       </p>
       <p>
         Choisissez un test pour commencer&nbsp;:
       </p>
-    </section>
+    </div>
 
     <section class="test-grid">
-      <article class="test-card">
+      <article class="card">
         <h2>« Suis-je un bon catholique ? »</h2>
         <p>
-          Un questionnaire à réponses « oui / non » donnant un score sur 100, avec points négatifs possibles…
+          Un questionnaire à réponses « oui / non » donnant un score sur 100, avec points négatifs possibles.
+          Plutôt un examen de cohérence de vie qu’une note de sainteté…
         </p>
-        <a href="testboncatho.html" class="btn-link primary-link">
-          Lancer le test
-        </a>
+        <a href="testboncatho.html" class="btn-link">Lancer le test</a>
       </article>
 
-      <article class="test-card">
+      <article class="card">
         <h2>« Quel apôtre êtes-vous ? »</h2>
         <p>
-          Un test de personnalité inspiré de quelques grands profils apostoliques&nbsp;: Pierre, Jean, Thomas, André,
-          Jacques, Matthieu…
+          Un test de personnalité inspiré de quelques grands profils apostoliques : Pierre, Jean, Thomas,
+          André, Jacques, Matthieu… pour voir à qui vous ressemblez le plus.
         </p>
-        <a href="testapotre.html" class="btn-link secondary-link">
-          Découvrir mon profil
-        </a>
+        <a href="testapotre.html" class="btn-link secondary">Découvrir mon profil</a>
       </article>
     </section>
-  </main>
 
-  <footer class="footer-note">
-    Ces tests n'ont aucune valeur canonique ou théologique officielle. Ils sont faits pour sourire et réfléchir.
-  </footer>
+    <footer class="site-footer">
+      Ces tests n'ont aucune valeur canonique&nbsp;: ils sont faits pour sourire et réfléchir.
+    </footer>
+  </div>
 
   <script>
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker.register('/sw.js')
-        .then(() => console.log("Service Worker enregistré"))
         .catch((e) => console.error("Erreur SW", e));
     }
   </script>
 </body>
+
 </html>

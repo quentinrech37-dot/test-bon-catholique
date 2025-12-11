@@ -11,54 +11,71 @@
   <link rel="apple-touch-icon" href="icons/icon-192.png">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-  <h1>Test : « Quel apôtre êtes-vous ? »</h1>
-  <div class="subtitle">
-    Un petit test de personnalité inspiré de quelques grands profils apostoliques.
+  <div class="france-bar">
+    <span class="bleu"></span>
+    <span class="blanc"></span>
+    <span class="rouge"></span>
   </div>
 
-  <div class="intro">
-    <p>
-      Ce questionnaire ne prétend évidemment pas résumer la richesse des apôtres,
-      mais proposer <strong>des profils symboliques</strong>&nbsp;: Pierre le fougueux,
-      Jean le contemplatif, Thomas le rationnel, André le discret, Jacques le zélé,
-      Matthieu le converti organisé…
-    </p>
-    <p>
-      À chaque question, choisissez la réponse qui vous ressemble le plus.
-    </p>
-    <p style="margin-top:6px;font-size:0.85rem;">
-      <a href="index.html">← Revenir à l'accueil des tests</a><br>
-      <a href="testboncatho.html">← Revenir au test « Suis-je un bon catholique ? »</a>
-    </p>
-  </div>
+  <div class="page">
+    <header class="site-header">
+      <p class="tagline">Personnalité · Apôtres · Mission</p>
+      <h1>Test : « Quel apôtre êtes-vous ? »</h1>
+      <p class="subtitle">
+        Un petit test de personnalité inspiré de quelques grands profils apostoliques.
+      </p>
+    </header>
 
-  <div class="question-box" id="question-box-apotre">
-    <div class="progress" id="progress-apotre"></div>
-    <div class="question-text" id="question-text-apotre">Chargement…</div>
-    <div id="answers-apotre"></div>
-  </div>
-
-  <div class="result-box" id="resultat-apotre">
-    <div id="profil-apotre"></div>
-    <div id="details-apotre"></div>
-    <div class="footer-note" style="margin-top:10px;">
-      Rappel : les apôtres sont des saints réels, pas des archétypes psychologiques.
-      Ce test est une caricature bienveillante pour réfléchir à votre manière de suivre le Christ.
+    <div class="intro card">
+      <p>
+        Ce questionnaire ne prétend évidemment pas résumer la richesse des apôtres,
+        mais proposer des <strong>profils symboliques</strong> :
+        Pierre le fougueux, Jean le contemplatif, Thomas le rationnel,
+        André le discret, Jacques le zélé, Matthieu le converti organisé…
+      </p>
+      <p>
+        À chaque question, choisissez la réponse qui vous ressemble le plus.
+      </p>
+      <div class="nav-links">
+        <a href="index.html">← Revenir à l'accueil des tests</a><br>
+        <a href="testboncatho.html">← Revenir au test « Suis-je un bon catholique ? »</a>
+      </div>
     </div>
+
+    <div class="question-box" id="question-box-apotre">
+      <div class="progress" id="progress-apotre"></div>
+      <div class="question-text" id="question-text-apotre">Chargement…</div>
+      <div id="answers-apotre"></div>
+    </div>
+
+    <div class="result-box" id="resultat-apotre">
+      <div id="profil-apotre"></div>
+      <div id="details-apotre"></div>
+      <div class="footer-note" style="margin-top:10px;">
+        Rappel : les apôtres sont des saints réels, pas des archétypes psychologiques.
+        Ce test est une caricature bienveillante pour réfléchir à votre manière de suivre le Christ.
+      </div>
+    </div>
+
+    <footer class="site-footer">
+      Si ce test vous donne envie de mieux connaître les apôtres : relisez les Évangiles et les Actes, c’est la meilleure suite.
+    </footer>
   </div>
 
   <script src="apotre.js"></script>
   <script>
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker.register('/sw.js')
-        .then(() => console.log("Service Worker enregistré"))
         .catch((e) => console.error("Erreur SW", e));
     }
   </script>
 </body>
+
 </html>
