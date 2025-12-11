@@ -530,7 +530,7 @@ const questionsApotres = [
     answers: [
       {
         label: "Un témoignage de foi courageux, qui aura entraîné d’autres à suivre le Christ.",
-        weights: { pierre: 2, jacquesMajeur: 1 }
+          weights: { pierre: 2, jacquesMajeur: 1 }
       },
       {
         label: "Une trace d’amour, de miséricorde, de relations profondes et pacifiées.",
@@ -538,14 +538,186 @@ const questionsApotres = [
       },
       {
         label: "Une parole de vérité, une lumière pour l’intelligence de la foi.",
-        weights: { thomas: 2, barthelemy: 1 }
+          weights: { thomas: 2, barthelemy: 1 }
       },
       {
         label: "Une œuvre durable (groupe, projet, institution) mise au service de l’Évangile.",
         weights: { matthieu: 2, jacquesMineur: 1 }
-      }
+        }
+      ]
+    },
+  {
+    text: "Quand une responsabilité imprévue vous tombe dessus, vous réagissez plutôt…",
+    answers: [
+      { label: "J’accepte et je fonce, quitte à ajuster en route.", weights: { pierre: 2, jacquesMajeur: 1 } },
+      { label: "Je prends un temps intérieur pour discerner calmement.", weights: { jean: 2, jude: 1 } },
+      { label: "J’analyse rapidement les implications avant de répondre.", weights: { thomas: 2, philippe: 1 } },
+      { label: "Je vérifie les aspects pratiques : horaires, logistique, disponibilité.", weights: { matthieu: 2, jacquesMineur: 1 } }
     ]
   },
+  {
+    text: "Quand on vous confie quelqu’un de fragile à accompagner…",
+    answers: [
+      { label: "Je parle franchement pour l’aider à réagir.", weights: { barthelemy: 2, pierre: 1 } },
+      { label: "Je privilégie l'écoute et la douceur.", weights: { jean: 2, andre: 1 } },
+      { label: "J’essaie de comprendre les causes profondes de sa situation.", weights: { thomas: 2 } },
+      { label: "Je trouve des solutions concrètes : un groupe, une retraite, un accompagnement.", weights: { philippe: 2, andre: 1 } }
+    ]
+  },
+  {
+    text: "Dans une discussion théologique animée, vous êtes plutôt…",
+    answers: [
+      { label: "Celui qui parle avec passion et conviction.", weights: { pierre: 2, jacquesMajeur: 1 } },
+      { label: "Celui qui ramène le débat au Christ et à la charité.", weights: { jean: 2, jude: 1 } },
+      { label: "Celui qui cite des textes, des arguments, des sources.", weights: { thomas: 2, barthelemy: 1 } },
+      { label: "Celui qui essaie d’organiser les idées et de conclure proprement.", weights: { matthieu: 2, philippe: 1 } }
+    ]
+  },
+  {
+    text: "Quelle est votre première réaction quand un projet échoue ?",
+    answers: [
+      { label: "Rebondir : on en lance un autre tout de suite.", weights: { pierre: 2 } },
+      { label: "Prier dans le silence pour retrouver la paix.", weights: { jean: 2 } },
+      { label: "Chercher rationnellement ce qui n’a pas fonctionné.", weights: { thomas: 2 } },
+      { label: "Revoir la logistique, l’équipe, les moyens.", weights: { matthieu: 2 } }
+    ]
+  },
+  {
+    text: "Si un ami vous pose une question difficile sur la foi…",
+    answers: [
+      { label: "Je réponds directement, sans tourner autour du pot.", weights: { pierre: 2, barthelemy: 1 } },
+      { label: "Je témoigne d’abord de ma relation personnelle au Christ.", weights: { jean: 2 } },
+      { label: "Je propose une explication structurée, argumentée.", weights: { thomas: 2, philippe: 1 } },
+      { label: "Je l’invite à un événement, une messe, un groupe.", weights: { andre: 2, philippe: 1 } }
+    ]
+  },
+  {
+    text: "Dans un pèlerinage, on vous retrouve souvent…",
+    answers: [
+      { label: "En tête du groupe, motivant tout le monde.", weights: { jacquesMajeur: 2, pierre: 1 } },
+      { label: "En retrait pour prier et méditer.", weights: { jean: 2 } },
+      { label: "En train de discuter, poser des questions, approfondir.", weights: { thomas: 2 } },
+      { label: "À gérer sacs, pauses, organisation pratique.", weights: { matthieu: 2 } }
+    ]
+  },
+  {
+    text: "Quand quelqu’un vous déçoit profondément…",
+    answers: [
+      { label: "Je peux être brusque, mais je reviens vite.", weights: { pierre: 2 } },
+      { label: "Je prie pour lui et je reste fidèle en amitié.", weights: { jean: 2 } },
+      { label: "Je réfléchis à ce qui a causé la situation.", weights: { thomas: 2 } },
+      { label: "J’essaie de reconstruire quelque chose de concret.", weights: { andre: 2, matthieu: 1 } }
+    ]
+  },
+  {
+    text: "Face à une grande injustice…",
+    answers: [
+      { label: "Je monte au créneau pour défendre la vérité.", weights: { simonZelote: 2, jacquesMajeur: 1 } },
+      { label: "Je porte cela dans la prière.", weights: { jude: 2, jean: 1 } },
+      { label: "J’analyse structurellement la situation.", weights: { thomas: 2 } },
+      { label: "Je m’engage dans une action concrète.", weights: { andre: 1, matthieu: 2 } }
+    ]
+  },
+  {
+    text: "Comment évangélisez-vous le plus naturellement ?",
+    answers: [
+      { label: "Par un témoignage courageux et direct.", weights: { pierre: 2, jacquesMajeur: 1 } },
+      { label: "Par la douceur, l’amitié, l’écoute.", weights: { jean: 2, andre: 1 } },
+      { label: "Par l’enseignement, les explications claires.", weights: { thomas: 2, philippe: 1 } },
+      { label: "Par des projets concrets : paroisse, événements, structures.", weights: { matthieu: 2, jacquesMineur: 1 } }
+    ]
+  },
+  {
+    text: "Votre relation à la prière ressemble plutôt à…",
+    answers: [
+      { label: "Un dialogue spontané, vivant, parfois orageux.", weights: { pierre: 2 } },
+      { label: "Une présence silencieuse, intime, fidèle.", weights: { jean: 2 } },
+      { label: "Une recherche de lumière et de vérité.", weights: { thomas: 2 } },
+      { label: "Un mélange de prière et d’action concrète.", weights: { matthieu: 2, andre: 1 } }
+    ]
+  },
+  {
+    text: "Devant une homélie que vous trouvez bancale…",
+    answers: [
+      { label: "Je bouillonne intérieurement (ou extérieurement).", weights: { pierre: 2, judas: 1 } },
+      { label: "Je confie cela à Dieu sans perdre la paix.", weights: { jean: 2 } },
+      { label: "Je vais relire le texte biblique pour vérifier.", weights: { thomas: 2, jacquesMineur: 1 } },
+      { label: "Je parle calmement au prêtre si besoin.", weights: { andre: 2, philippe: 1 } }
+    ]
+  },
+  {
+    text: "Quand vous découvrez une nouvelle mission dans l’Église…",
+    answers: [
+      { label: "Je me réjouis et je veux y aller tout de suite.", weights: { pierre: 2 } },
+      { label: "J’en parle dans la prière pour discerner.", weights: { jean: 2 } },
+      { label: "Je réfléchis à la cohérence théologique.", weights: { thomas: 2 } },
+      { label: "Je regarde l’organisation nécessaire.", weights: { matthieu: 2 } }
+    ]
+  },
+  {
+    text: "On dit de vous que vous êtes quelqu’un de…",
+    answers: [
+      { label: "Courageux, un peu impulsif.", weights: { pierre: 2 } },
+      { label: "Profond, aimant la communion.", weights: { jean: 2 } },
+      { label: "Logique, critique, rationnel.", weights: { thomas: 2 } },
+      { label: "Fiable, structuré, constant.", weights: { jacquesMineur: 2, matthieu: 1 } }
+    ]
+  },
+  {
+    text: "Dans un groupe chrétien, vous aimez surtout…",
+    answers: [
+      { label: "Animer, prendre la parole.", weights: { pierre: 2, jacquesMajeur: 1 } },
+      { label: "Créer des liens profonds.", weights: { jean: 2, andre: 1 } },
+      { label: "Approfondir les enseignements.", weights: { thomas: 2 } },
+      { label: "Faire en sorte que tout soit bien organisé.", weights: { matthieu: 2, philippe: 1 } }
+    ]
+  },
+  {
+    text: "Lorsqu’un proche traverse une grande épreuve…",
+    answers: [
+      { label: "Vous essayez de le secouer avec franchise.", weights: { barthelemy: 2, pierre: 1 } },
+      { label: "Vous offrez écoute et présence fidèle.", weights: { jean: 2, jude: 1 } },
+      { label: "Vous explorez intellectuellement ce qui l’aide le plus.", weights: { thomas: 2 } },
+      { label: "Vous organisez quelque chose pour l’aider concrètement.", weights: { andre: 1, philippe: 2 } }
+    ]
+  },
+  {
+    text: "Votre sensibilité liturgique est plutôt…",
+    answers: [
+      { label: "Les célébrations vibrantes et missionnaires.", weights: { pierre: 2, jacquesMajeur: 1 } },
+      { label: "Le silence, l’adoration, la contemplation.", weights: { jean: 2 } },
+      { label: "La liturgie comme source d’enseignement.", weights: { thomas: 2 } },
+      { label: "La cohérence et la beauté concrète de la célébration.", weights: { jacquesMineur: 2, matthieu: 1 } }
+    ]
+  },
+  {
+    text: "Quand vous voyez un conflit dans votre paroisse…",
+    answers: [
+      { label: "Vous intervenez vigoureusement pour rétablir la vérité.", weights: { pierre: 2, simonZelote: 1 } },
+      { label: "Vous apaisez, écoutez, ramenez à la charité.", weights: { jean: 2, andre: 1 } },
+      { label: "Vous analysez les causes profondes.", weights: { thomas: 2 } },
+      { label: "Vous proposez une solution concrète acceptable.", weights: { matthieu: 2, philippe: 1 } }
+    ]
+  },
+  {
+    text: "Face à une critique publique de l’Église…",
+    answers: [
+      { label: "Vous la corrigez fermement.", weights: { jacquesMajeur: 2, simonZelote: 1 } },
+      { label: "Vous cherchez la blessure qui se cache derrière.", weights: { jean: 2, andre: 1 } },
+      { label: "Vous expliquez calmement la doctrine réelle.", weights: { thomas: 2, barthelemy: 1 } },
+      { label: "Vous invitez à découvrir la paroisse de l’intérieur.", weights: { philippe: 2, matthieu: 1 } }
+    ]
+  },
+  {
+    text: "Lorsque vous servez l’Église, vous aimez que…",
+    answers: [
+      { label: "Cela avance, quitte à bousculer un peu.", weights: { pierre: 2 } },
+      { label: "Cela fasse grandir la communion et la paix.", weights: { jean: 2 } },
+      { label: "Cela soit cohérent, vrai, solide en doctrine.", weights: { thomas: 2 } },
+      { label: "Cela soit bien organisé et durable.", weights: { matthieu: 2, jacquesMineur: 1 } }
+    ]
+  },
+
   {
     text: "Quand quelque chose vous déçoit vraiment dans l’Église (scandale, décision, ambiance), votre tentation la plus forte est…",
     answers: [
